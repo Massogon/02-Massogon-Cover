@@ -1,28 +1,33 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    // Select the audio element and source
-    const audioElement = document.getElementById('background-audio');
-    const audioSource = document.getElementById('audio-source');
-    const playButton = document.getElementById('play-button');
+    let currentProjectIndex = 0;
+    const projects = document.querySelectorAll('.project');
+    const totalProjects = projects.length;
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
 
-    // Set the source file
-    audioSource.src = '/02-Challenge/Assets/Media/avatar-last-airbender-last-agni-kai-epic-emotional-version.mp3';
+    // Function to update the visible project
+    function updateProjectDisplay() {
+        projects.forEach((project, index) => {
+            if (index === currentProjectIndex) {
+                project.classList.remove('hidden');
+            } else {
+                project.classList.add('hidden');
+            }
+        });
+    }
 
-    // Event listener to play audio on button click
-    playButton.addEventListener('click', () => {
-        audioElement.load();
-        var playPromise = audioElement.play();
-
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                // Automatic playback started!
-                // Show playing UI.
-                console.log("Playback started successfully");
-            })
-            .catch(error => {
-                // Auto-play was prevented
-                // Show paused UI.
-                console.error("Playback failed:", error);
-            });
-        }
+    // Event listener for next button
+    nextButton.addEventListener('click', () => {
+        currentProjectIndex = (currentProjectIndex + 1) % totalProjects; // Loop back to the first project if at the end
+        updateProjectDisplay();
     });
+
+    // Event listener for previous button
+    prevButton.addEventListener('click', () => {
+        currentProjectIndex = (currentProjectIndex - 1 + totalProjects) % totalProjects; // Loop back to the last project if at the beginning
+        updateProjectDisplay();
+    });
+
+    // Initially display the first project
+    updateProjectDisplay();
 });

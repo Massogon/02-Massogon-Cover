@@ -21,25 +21,46 @@
         </nav>
     </header>
 
-    <!-- Main content area -->
-    <main>
-        <!-- About Me section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a highly motivated ambitious individual whose sole purpose is to excel in life. And I promise, I will succeed.</p>
-        </section>
+<!-- Main content area -->
+<main>
+    <!-- About Me section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a highly motivated ambitious individual whose sole purpose is to excel in life. And I promise, I will succeed.</p>
+    </section>
 
-        <!-- Projects section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>GOAT Battleship</h3>
-                <p>A fun implementation of the classic Battleship game.</p>
-                <a href="https://massogon.github.io/goat-battleship/" target="_blank">Play the game</a>
-            </div>
-            <!-- Add more projects here -->
-        </section>
-    </main>
+<!-- Projects Carousel section -->
+<section id="projects">
+    <div class="projects-header">
+        <h2>Projects</h2>
+        <!-- Arrow buttons -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="project">
+        <h3>GOAT Battleship</h3>
+        <p>A fun implementation of the classic Battleship game.</p>
+        <a href="https://massogon.github.io/goat-battleship/" target="_blank">
+            <img src="./Assets/images/battleshipGameBoardState.png" alt="battleshipGameBoardState.png">
+        </a>
+    </div>
+
+    <!-- Project 2 (Initially hidden) -->
+    <div class="project hidden">
+        <h3>Hannah Smith Ballroom</h3>
+        <p>A custom-built website for the Hannah Smith Ballroom business.</p>
+        <a href="https://hannah-smith-ballroom.onrender.com/" target="_blank">
+            <img src="./Assets/images/HannahSmithBallroom.PNG" alt="Hannah Smith Ballroom">
+        </a>
+    </div>
+
+    <!-- Add more projects here (hidden initially) -->
+</section>
+</main>
 
     <!-- Contact section -->
     <section id="contact">

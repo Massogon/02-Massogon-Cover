@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif; /* Global font style */
     margin: 0;
@@ -77,12 +81,56 @@ section {
     color: white; /* White text color */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    display: none; /* Hide all projects by default */
+}
+
+.project:not(.hidden) {
+    display: block; /* Show only the project that is not hidden */
+}
+
+.project img {
+    width: 100%; /* Full width image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
 }
 
 .project h3 {
     margin-top: 0; /* Remove top margin */
 }
 
+/* Projects header */
+.projects-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Arrow button container */
+.arrows {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Arrow button styles */
+.arrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #555555; /* Semi-transparent background */
+    box-shadow: 0 0px 8px #f4f4f4; /* Light shadow effect */
+    border: none;
+    font-family: monospace;
+    color: #f4f4f4;
+    font-weight: bold;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.arrows button:hover {
+    background-color: rgba(238, 238, 238, 1); /* Fully opaque on hover */
+}
 /* Contact Section Styles */
 #contact {
     text-align: center; /* Center text */
